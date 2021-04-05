@@ -10,18 +10,17 @@ month = params.values[1].to_i
 
 first_date = Date.new(year,month,1)
 last_date = Date.new(year,month,-1)
-last_day = last_day.day
-firstday_wday = first_day.wday
+last_day = last_date.day
+firstday_wday = first_date.wday
 
-hash {}
-1.upto(last_date) do |n|
-	puts n
+hash = {}
+1.upto(last_day) do |n|
 	hash[n] = (first_date + n - 1).wday
 end
 
-puts (#{month}月 #{year}).center(20)
+puts ("#{month}月 #{year}").center(20)
 puts "日 月 火 水 木 金 土"
-print "  " * firstday_wday
+print "   " * firstday_wday
 
 hash.each do |day, wday|
 	if wday % 7 == 0
