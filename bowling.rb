@@ -19,7 +19,9 @@ end
 
 point = 0
 frames.each_with_index do |frame, i|
-	if frame[0] == 10
+	if frame[0] == 10 && frames[12] 
+		point += frame.sum
+	elsif	frame[0] == 10 
 		point += 10 + frames[i + 1].sum
 	elsif frames[i].sum == 10
 		point += 10 + frames[i + 1][0]
